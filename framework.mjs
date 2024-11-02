@@ -1,5 +1,6 @@
 import { effect, signal } from "./vendor/signals-core.module.js";
 import jQuery from "./vendor/jquery.slim.module.min.js";
+import { createHashHistory } from "./vendor/history.production.min.js";
 
 export const render = (strings, ...elements) => {
   const elementToId = new Map();
@@ -29,10 +30,18 @@ export const render = (strings, ...elements) => {
   return root;
 };
 
+export const history = createHashHistory();
+
 export const $ = jQuery;
 
 $.fn.useEffect = function (fn) {
   effect(() => fn(this));
+  return this;
+};
+
+$.fn.useHistory = function (fn) {
+  fn(this, history);
+  history.listen(() => fn(this, history));
   return this;
 };
 

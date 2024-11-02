@@ -7,16 +7,16 @@ export const Counter = ({ title } = {}) => {
       <div class="card-body d-grid">
         <h5 class="card-title">${title}</h5>
         <div>
-          ${$(`<span data-id="counter" class="display-1"></span>`).useEffect(
+          ${$(`<span class="display-1"></span>`).useEffect(
             (x) => x.text(count.value),
           )}
         </div>
         <div class="btn-group" role="group" aria-label="Basic example">
           ${$(
-            `<button data-id="decrease" class="btn btn-danger">-</button>`,
+            `<button class="btn btn-danger">-</button>`,
           ).on("click", () => (count.value -= 1))}
           ${$(
-            `<button data-id="increase" class="btn btn-primary">+</button>`,
+            `<button class="btn btn-primary">+</button>`,
           ).on("click", () => (count.value += 1))}
         </div>
       </div>
