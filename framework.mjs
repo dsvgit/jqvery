@@ -11,7 +11,7 @@ export const render = (strings, ...elements) => {
     }
 
     if (x instanceof $) {
-      const id = crypto.randomUUID();
+      const id = Math.random().toString(16).slice(2);
       elementToId.set(x, id);
       return `<div id="${id}"></div>`;
     }
