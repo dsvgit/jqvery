@@ -1,8 +1,9 @@
-import { render, $, history } from "../framework.mjs";
+import { render, $ } from "../framework.mjs";
 
 import { CountersPage } from "./counters-page.mjs";
 import { AboutPage } from "./about-page.mjs";
 import { Navbar } from "./navbar.mjs";
+import { PokemonsPage } from "./pokemons-page.mjs";
 
 export const App = ({} = {}) => {
   const root = render`
@@ -13,6 +14,11 @@ export const App = ({} = {}) => {
 
         if (location.pathname.startsWith("/about")) {
           x.html(AboutPage());
+          return;
+        }
+
+        if (location.pathname.startsWith("/pokemon")) {
+          x.html(PokemonsPage());
           return;
         }
 

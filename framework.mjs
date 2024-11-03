@@ -45,4 +45,4 @@ $.fn.useHistory = function (fn) {
   return this;
 };
 
-export { signal };
+export { signal, effect };

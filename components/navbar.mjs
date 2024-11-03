@@ -27,6 +27,15 @@ export const Navbar = () => {
                   },
                 )}
               </li>
+              <li class="nav-item">
+                ${$(`<a class="nav-link" href="#">Pokemon</a>`).on(
+                  "click",
+                  (e) => {
+                    e.preventDefault();
+                    history.push("/pokemon");
+                  },
+                )}
+              </li>
           </ul>
         </div>
       </div>
