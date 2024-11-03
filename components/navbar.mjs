@@ -2,7 +2,7 @@ import { render, $, history } from "../framework.mjs";
 
 export const Navbar = () => {
   return render`
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Counters App</a>
         
